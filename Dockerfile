@@ -9,7 +9,7 @@ RUN mkdir -p /etc/bind/master
 
 # Copiando los ficheros de configuracion
 COPY ./config/*.conf /etc/bind/
-COPY ./db/db.* /etc/bind/master/
+COPY ./db/db.* /var/bind/pri/
 
 # Exponiendo el puerto 53
 EXPOSE 53/tcp 53/udp

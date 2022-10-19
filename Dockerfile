@@ -4,9 +4,6 @@ FROM alpine:latest
 # Instalando Bind9
 RUN apk add --update bash bind busybox-extras bind-tools rsyslog supervisor dnstop && rm -rf /var/cache/apk/*
 
-# creando el archivo para guardar la Base de Datos
-RUN mkdir -p /etc/bind/master
-
 # Copiando los ficheros de configuracion
 COPY ./config/*.conf /etc/bind/
 COPY ./db/db.* /var/bind/pri/

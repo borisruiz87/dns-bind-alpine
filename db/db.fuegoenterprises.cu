@@ -20,6 +20,9 @@ $ORIGIN fuegoenterprises.cu. ; base domain-name
   
 ; RR type A
 ns1        IN      A       152.206.119.139
+imap       IN	CNAME	   mail.othar.cu.
+pop        IN	CNAME	   mail.othar.cu.
+smtp       IN	CNAME	   mail.othar.cu.
 
 ;dmarc		   
 _dmarc    2000   IN      TXT     "v=DMARC1;p=reject;aspf=s;fo=1;rf=afrf;ruf=mailto:admin@fuegoenterprises.cu"

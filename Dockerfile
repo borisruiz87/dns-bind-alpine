@@ -11,7 +11,7 @@ COPY ./db/db.* /var/bind/pri/
 # Exponiendo el puerto 53
 EXPOSE 53/tcp 53/udp
 
-VOLUME /etc/bind
+VOLUME ["/etc/bind", "/var/bind/"]
 
 RUN mkdir -p /var/log/supervisor
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf

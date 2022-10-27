@@ -22,9 +22,10 @@ $ORIGIN othar.cu. ; base domain-name
 ns1        IN      A       152.206.119.139
 mail       IN      A       190.6.81.70
 
+;dmarc		   
+_dmarc    2000   IN      TXT     "v=DMARC1;p=reject;aspf=s;fo=1;rf=afrf;ruf=mailto:admin@othar.cu"
+
 ; dkim
 20221021._domainkey	IN	TXT	( "v=DKIM1; k=rsa; "
 					 "p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAztk18Cx+VJLu8YQcOjOGdDJOr/lMVEz6g1gTBqMblWjWV1L1lc+qI1/5CIje7nKiEWoLuAwsI7QkFhGcX7iWbZfI9R1jsMRVgCAXSKTWPv1W8/Ckmk9oxf+82NT2i2oQFWfbbCMmfhtFSv/ADq8SSUBGPRlA4klmTfIvAgvvpiV5NxcjNKUXL9hPh+YDyLt24lpT9OJ4nPu/cA"
 					 "o0Ayafd3o2OOZppGz6ncvMuqM0HBNJfLFsz0bcZ3vPQu6LLExP9ZmJjFCIguKj2KUcmvl37LnwQNa+xauPaIe1F5aN58GdvT9/K/odOpNJq5p43NLqUazrgNB7fxa1Rp9HgGCUxQIDAQAB" )  ; ----- DKIM key 20221021 for othar.cu
-
-			

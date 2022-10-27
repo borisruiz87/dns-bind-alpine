@@ -5,7 +5,7 @@ FROM alpine:latest
 RUN apk add --update bash bind busybox-extras bind-tools rsyslog supervisor dnstop && rm -rf /var/cache/apk/*
 
 # Copiando los ficheros de configuracion
-COPY ./config/*.conf /etc/bind/
+COPY ./config/* /etc/bind/
 COPY ./db/db.* /var/bind/pri/
 
 # Exponiendo el puerto 53

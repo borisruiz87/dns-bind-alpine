@@ -14,6 +14,9 @@ $ORIGIN othar.cu. ; base domain-name
 
 ; mail server RRs for the zone (domain)
            IN      MX  10  mail.othar.cu.
+	
+; spf
+           IN	   TXT	"v=spf1 a:mail.othar.cu ip4:152.206.119.139/32 mx -all"
 		   
 ; RR type A
 ns1        IN      A       152.206.119.139

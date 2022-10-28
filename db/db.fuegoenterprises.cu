@@ -16,7 +16,7 @@ $ORIGIN fuegoenterprises.cu. ; base domain-name
            IN      MX  10  mail.othar.cu.
   
 ; spf
-           IN	   TXT	"v=spf1 a:mail.othar.cu ip4:152.206.119.139/32 mx -all"
+           IN	   TXT	"v=spf1 a:mail.othar.cu ip4:190.6.81.70/32 mx -all"
   
 ; RR type A
 ns1        IN      A       152.206.119.139

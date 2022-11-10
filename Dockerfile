@@ -14,7 +14,7 @@ RUN  cp /usr/share/zoneinfo/Cuba /etc/localtime
 # Exponiendo el puerto 53
 EXPOSE 53/tcp 53/udp
 
-VOLUME ["/etc/bind", "/var/bind/"]
+# VOLUME ["/etc/bind", "/var/bind/"]
 
 RUN mkdir -p /var/log/supervisor
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf

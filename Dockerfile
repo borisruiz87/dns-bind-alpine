@@ -17,5 +17,6 @@ EXPOSE 53/tcp 53/udp
 VOLUME ["/etc/bind", "/var/bind/"]
 
 COPY entrypoint.sh /
+USER named
 ENTRYPOINT ["/entrypoint.sh"]
 

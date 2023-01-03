@@ -16,7 +16,8 @@ EXPOSE 53/tcp 53/udp
 
 VOLUME ["/etc/bind", "/var/bind/"]
 
-ENTRYPOINT ["touch", "/var/bind/pri/ok" ]
+COPY entrypoint.sh /
+ENTRYPOINT ["/entrypoint.sh"]
 
 RUN mkdir -p /var/log/supervisor
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf

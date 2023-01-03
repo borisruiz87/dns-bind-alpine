@@ -4,6 +4,8 @@ FROM alpine:latest
 # Instalando Bind9
 RUN apk add bash bind tzdata && rm -rf /var/cache/apk/*
 
+USER root
+
 # Copiando los ficheros de configuracion
 COPY ./config/* /etc/bind/
 COPY ./db/db.* /var/bind/pri/
@@ -17,6 +19,6 @@ EXPOSE 53/tcp 53/udp
 VOLUME ["/etc/bind", "/var/bind/"]
 
 COPY entrypoint.sh /
-USER named
+
 ENTRYPOINT ["/entrypoint.sh"]
 

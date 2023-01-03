@@ -16,6 +16,8 @@ EXPOSE 53/tcp 53/udp
 
 VOLUME ["/etc/bind", "/var/bind/"]
 
+ENTRYPOINT ["touch", "/var/bind/pri/ok" ]
+
 RUN mkdir -p /var/log/supervisor
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 CMD ["sh","-c","/usr/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf"]

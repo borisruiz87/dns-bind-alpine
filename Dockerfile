@@ -2,7 +2,7 @@
 FROM alpine:latest
 
 # Instalando Bind9
-RUN apk add --update bash bind busybox-extras bind-tools rsyslog tzdata supervisor dnstop && rm -rf /var/cache/apk/*
+RUN apk add --update bash bind busybox-extras bind-tools tzdata dnstop && rm -rf /var/cache/apk/*
 
 # Copiando los ficheros de configuracion
 COPY ./config/* /etc/bind/
@@ -19,6 +19,3 @@ VOLUME ["/etc/bind", "/var/bind/"]
 COPY entrypoint.sh /
 ENTRYPOINT ["/entrypoint.sh"]
 
-RUN mkdir -p /var/log/supervisor
-COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-CMD ["sh","-c","/usr/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf"]

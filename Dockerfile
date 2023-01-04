@@ -2,7 +2,7 @@
 FROM alpine:latest
 
 # Instalando Bind9
-RUN apk add bash bind tzdata && rm -rf /var/cache/apk/*
+RUN apk add --update bash bind tzdata && rm -rf /var/cache/apk/*
 
 USER root
 

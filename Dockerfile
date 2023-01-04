@@ -8,7 +8,8 @@ USER root
 
 # Copiando los ficheros de configuracion
 COPY ./config/* /etc/bind/
-COPY ./db/db.* /var/bind/pri/
+RUN mkdir -p /var/tmp
+COPY ./db/db.* /var/tmp/
 
 # incorporando la zona horaria de Cuba
 RUN  cp /usr/share/zoneinfo/Cuba /etc/localtime

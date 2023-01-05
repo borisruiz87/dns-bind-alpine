@@ -2,7 +2,7 @@
 FROM alpine:latest
 
 # Instalando Bind9
-RUN apk add --update bash bind tzdata && rm -rf /var/cache/apk/*
+RUN apk add --update bash bind tzdata supervisor && rm -rf /var/cache/apk/*
 
 # Copiando los ficheros de configuracion
 COPY ./config/* /etc/bind/

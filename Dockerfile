@@ -2,7 +2,7 @@
 FROM alpine:latest as bind
 
 # Instalando Bind9
-RUN apk add --update bash bind busybox-extras bind-tools && rm -rf /var/cache/apk/*
+RUN apk add --update bash bind && rm -rf /var/cache/apk/*
 
 # Copiando los ficheros de configuracion
 # COPY ./config/* /etc/bind/

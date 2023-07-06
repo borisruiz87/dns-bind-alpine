@@ -11,9 +11,10 @@ COPY ./db/db.* /var/bind/pri/
 # Base Alpine
 FROM alpine:latest
 RUN mkdir -p /var/tmp
+RUN mkdir -p /var/dns
 COPY --from=bind /var/bind/pri/* /var/tmp/
 
-VOLUME ["/var/tmp"]
+VOLUME ["/var/dns"]
 
 COPY entrypoint.sh /
 RUN chmod 755 /entrypoint.sh

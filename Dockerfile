@@ -9,7 +9,7 @@ RUN apk add --update bash bind busybox-extras bind-tools && rm -rf /var/cache/ap
 COPY ./db/db.* /var/bind/pri/
 
 # Base Alpine
-FROM alpine:latest
+FROM busybox:1.28
 RUN mkdir -p /var/tmp
 RUN mkdir -p /var/dns
 COPY --from=bind /var/bind/pri/* /var/tmp/

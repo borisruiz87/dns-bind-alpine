@@ -5,4 +5,4 @@ touch /var/dns/ok
 echo "PINGA" >> /var/dns/ok
 
 
-exec "$@"
+#exec "$@"

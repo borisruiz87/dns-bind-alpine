@@ -5,3 +5,5 @@ then
     cp /var/bind/pri/db.* /var/dns/
 fi
 
+exit 0
+

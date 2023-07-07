@@ -1,8 +1,7 @@
 #!/bin/bash
 
-cp /var/bind/pri/db.* /var/dns/
-touch /var/dns/ok
-echo "PINGA" >> /var/dns/ok
+if [[ $(ls /var/dns/ | wc -l) == 0 ]]
+then
+    cp /var/bind/pri/db.* /var/dns/
+fi
 
-
-#exec "$@"

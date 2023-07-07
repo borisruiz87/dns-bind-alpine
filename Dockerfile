@@ -11,7 +11,8 @@ COPY ./db/db.* /var/bind/pri/
 FROM alpine:latest
 
 RUN mkdir -p /var/dns
-COPY --from=bind /var/bind/pri/* /var/dns/
+RUN mkdir -p /var/tmp
+COPY --from=bind /var/bind/pri/* /var/tmp/
 
 VOLUME ["/var/dns"]
 

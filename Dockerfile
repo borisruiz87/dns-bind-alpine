@@ -19,5 +19,5 @@ VOLUME ["/var/dns"]
 
 RUN chmod 755 /var/tmp/entrypoint.sh
 
-ENTRYPOINT ["sh","-c","./var/tmp/entrypoint.sh"]
+ENTRYPOINT ["sh","-c","/var/tmp/entrypoint.sh"]
 

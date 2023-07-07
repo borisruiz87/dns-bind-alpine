@@ -12,7 +12,8 @@ RUN mkdir -p /var/dns
 
 VOLUME ["/var/dns"]
 
-RUN chmod 755 /var/tmp/entrypoint.sh
+COPY entrypoint.sh /
+RUN chmod 755 /entrypoint.sh
 
-ENTRYPOINT ["sh","-c","/var/tmp/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
 

@@ -5,3 +5,4 @@ then
     cp /var/tmp/* /var/dns/
 fi
 
+exit 0

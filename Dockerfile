@@ -21,3 +21,5 @@ RUN chmod 755 /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
 
+CMD ["/bin/sh","-c","echo Hello"]
+

@@ -19,7 +19,5 @@ VOLUME ["/var/dns"]
 COPY entrypoint.sh /
 RUN chmod 755 /entrypoint.sh
 
-#ENTRYPOINT ["/entrypoint.sh"]
-
-CMD ["/bin/sh","-c","ls -lah /"]
+ENTRYPOINT ["sh /entrypoint.sh"]
 

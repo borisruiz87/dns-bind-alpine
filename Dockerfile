@@ -16,8 +16,8 @@ COPY --from=bind /var/bind/pri/* /var/tmp/
 
 VOLUME ["/var/dns"]
 
-COPY entrypoint.sh /
-RUN chmod 755 /entrypoint.sh
+COPY entrypoint.sh /usr/local/bin/
+RUN chmod 755 /usr/local/bin/entrypoint.sh
 
 ENTRYPOINT ["entrypoint.sh"]
 

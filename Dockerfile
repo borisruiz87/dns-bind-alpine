@@ -1,5 +1,5 @@
 # DNS Bind9 con Base Alpine
-FROM alpine:3.19.1
+FROM alpine:3.18
 
 # Instalando Bind9
 RUN apk add --update bash bind busybox-extras bind-tools rsyslog tzdata supervisor dnstop && rm -rf /var/cache/apk/*

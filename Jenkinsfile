@@ -12,7 +12,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Build the image..'
-                sh 'docker build --build-arg TOKEN=$GITHUB_CREDS -t $REPO/$NAME:$NUMBER .'
+                sh 'docker build --build-arg TOKEN=$GITHUB_CREDS -t $REPO/$NAME:1.$NUMBER.0 .'
             }
         }
         stage('Test') {

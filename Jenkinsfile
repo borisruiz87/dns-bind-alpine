@@ -5,7 +5,8 @@ pipeline {
         HUB_CREDS = credentials('hub-credencial')
         NAME = 'alpine-dns'
         REPO = 'borisruiz87'
-        NUMBER = "${env.BUILD_ID}-${env.GIT_REVISION}"
+        NUMBER = "${env.BUILD_ID}-${env.GIT_COMMIT}"
+        dockerImage = ''
     }
     
     stages {
@@ -13,7 +14,7 @@ pipeline {
             steps {
                 echo 'Build the image..'
                 script {
-                    def dockerImage = docker.build "$REPO/$NAME:1.$NUMBER"
+                    dockerImage = docker.build "$REPO/$NAME:1.$NUMBER"
                 }
                 
             }

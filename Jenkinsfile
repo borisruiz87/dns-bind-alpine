@@ -2,6 +2,7 @@ pipeline {
     agent any
     environment {
         GITHUB_CREDS = credentials('token-github')
+        HUB_CREDS = credentials('hub-credencial')
         NAME = 'alpine-dns'
         REPO = 'borisruiz87'
         NUMBER = "${env.BUILD_ID}"
@@ -27,8 +28,10 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                withDockerRegistry([credentialsId: "hub-credencial", url: ""])
-                sh 'docker push $REPO/$NAME:1.$NUMBER.0'
+                withDockerRegistry(credentialsId: 'hub-credencial', url: '') {
+                     sh 'docker push $REPO/$NAME:1.$NUMBER.0'
+                }
+                
             }
         }
     }

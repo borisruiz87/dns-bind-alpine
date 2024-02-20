@@ -12,7 +12,10 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Build the image..'
-                dockerImage = docker.build '--build-arg TOKEN=$GITHUB_CREDS -t $REPO/$NAME:1.$NUMBER .'
+                script {
+                    def dockerImage = docker.build '--build-arg TOKEN=$GITHUB_CREDS -t $REPO/$NAME:1.$NUMBER .'
+                }
+                
             }
         }
         stage('Test') {
@@ -28,8 +31,10 @@ pipeline {
         }
         stage('Push') {
             steps {
-                withDockerRegistry(credentialsId: 'hub-credencial', url: '') {
-                     dockerImage.push()
+                script {
+                   withDockerRegistry(credentialsId: 'hub-credencial', url: '') {
+                        dockerImage.push()
+                   }
                 }
                 
             }

@@ -5,7 +5,7 @@ pipeline {
         HUB_CREDS = credentials('hub-credencial')
         NAME = 'alpine-dns'
         REPO = 'borisruiz87'
-        NUMBER = "${env.BUILD_ID}-${env.GIT_REVISION,length=8}"
+        NUMBER = "${env.BUILD_ID}-${env.GIT_REVISION}"
     }
     
     stages {

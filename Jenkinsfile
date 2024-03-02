@@ -3,7 +3,7 @@ pipeline {
     environment {
         GITHUB_CREDS = credentials('token-github')
         HUB_CREDS = credentials('hub-credencial')
-        NAME = 'alpine-dns'
+        NAME = 'gitops-test'
         REPO = 'borisruiz87'
         NUMBER = "${env.BUILD_ID}-${env.GIT_COMMIT}"
         dockerImage = ''

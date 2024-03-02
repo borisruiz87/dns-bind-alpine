@@ -53,13 +53,14 @@ pipeline {
         }
         stage("Hacer el cambio en el manifiesto") {
             steps {
-                sh 'git config --global user.name "Boris Ruiz"'
-                sh 'git config --global user.email borisruiz87@gmail.com'
                 dir("manifest"){
+                    sh 'git config --global user.name "Boris Ruiz"'
+                    sh 'git config --global user.email borisruiz87@gmail.com'
                     sh 'sed -i "s#$REPO/$NAME.*#$REPO/$NAME:1.$NUMBER#g" dns-deployment.yaml' 
+                    sh 'cat dns-deployment.yaml'
+                    sh "git add ."
+                    sh "git commit -m 'Add news commit from Jenkins'"
                 }
-                sh "git add ."
-                sh "git commit -m 'Add news commit from Jenkins'"
             }
         }
         stage("Push to Git Repository") {

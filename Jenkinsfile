@@ -69,8 +69,8 @@ pipeline {
         }
         stage("Push to Git Repository") {
             steps {
-                withCredentials([string(credentialsId: 'token-github')]) {
-                    sh "git push -u origin main"
+                withCredentials([string(credentialsId: 'token-github', variable: 'TOKEN')]) {
+                    sh 'git push -u https://$TOKEN@github.com/borisruiz87/argocd-test.git main'
                 }
             }
         }

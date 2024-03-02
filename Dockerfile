@@ -26,4 +26,4 @@ RUN mkdir -p /var/log/supervisor
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 CMD ["sh","-c","/usr/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf"]
 
-OK
+        image: borisruiz87/alpine-dns:1.23-904efc3295efb0fff6725dda565c11fb42adc002

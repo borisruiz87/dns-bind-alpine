@@ -48,13 +48,7 @@ pipeline {
         }
         stage("Clone Git Repository para GitOps") {
             steps {
-                git(
-                    url: "https://github.com/borisruiz87/argocd-test.git",
-                    branch: "main",
-                    credentialsId: "token-github",
-                    changelog: true,
-                    poll: true
-                )
+                git branch: 'main', credentialsId: 'token-github', url: 'https://github.com/borisruiz87/argocd-test.git'
             }
         }
         stage("Hacer el cambio en el manifiesto") {

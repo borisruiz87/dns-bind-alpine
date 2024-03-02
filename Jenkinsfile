@@ -51,6 +51,7 @@ pipeline {
                 git(
                     url: "https://github.com/borisruiz87/argocd-test.git",
                     branch: "main",
+                    credentialsId: "token-github",
                     changelog: true,
                     poll: true
                 )
